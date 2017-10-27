@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>时光购首页</title>
+
+    <link rel="stylesheet" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/mescroll.css">
+    <!--在您实际的项目中,请留意mescroll-option.css的图片路径是否引用正确,可写成绝对路径或网络地址-->
+    <!--可把mescroll-option.css代码拷贝到mescroll.min.css中,合为一个css文件,方便引用-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="js/rem.js"></script>
+
+</head>
+
+<body>
+<!--标题-->
+<a href="../index.html"><div class="header"></div></a>
+<!--滑动区域-->
+<div id="mescroll" class="mescroll">
+    <div class="container">
+        <!--模拟的轮播-->
+        <div data-am-widget="slider" class="am-slider am-slider-a1 main-slider" data-am-slider='{&quot;directionNav&quot;:false}'>
+            <ul class="am-slides">
+                <li>
+                    <a href="http://mihutime.com/shop "><img src="images/banner.png" alt="" class="banner img-responsive"></a>
+                </li>
+                <li>
+                    <a href="http://mihutime.com/shop "><img src="images/banner.png" alt="" class="banner img-responsive"></a>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-button">
+            <div data-am-widget="slider" class="am-slider am-slider-a1" data-am-slider='{&quot;directionNav&quot;:false}' data-am-flexslider="{slideshow: false}">
+                <div class="slider am-slides">
+                    <li>
+                        <ul class="slider-menu">
+                            <li><a href="###"><img src="images/m9.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m2.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m3.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m4.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m5.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m6.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m7.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m8.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="slider-menu">
+                            <li><a href="###"><img src="images/m9.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m2.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m3.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m4.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m5.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m6.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m7.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                            <li><a href="###"><img src="images/m8.png" class="img-responsive"><span class="slider-title">甜点饮品</span></a></li>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="trends">
+            <div class="trends-h"><img src="images/in1.png" class="img-responsive"></div>
+            <div class="trends-m">
+                <p class="trends-m-title">称霸全国的9只鸡，你都吃过么？啊，吃过么？</p>
+                <p class="trends-m-num">19658人浏览</p>
+            </div>
+            <div class="trends-f"><img src="images/in2.png" class="img-responsive"></div>
+        </div>
+        <div class="tc1"></div>
+    </div>
+    <!--筛选条件; 模拟列表的重置和演示空布局的使用-->
+    <div class="menu-bar">
+        <li class="menu-bar-li"  i="1">
+            <p>优惠券</p>
+            <p><i class="iconfont icon-coupons
+"></i></p>
+        </li>
+        <li class="menu-bar-li menu-bar-active" i="0">
+            <p>限时特卖</p>
+            <p><i class="iconfont icon-time"></i></p>
+        </li>
+        <li class="menu-bar-li" i="2">
+            <p>拼团抢购</p>
+            <p><i class="iconfont icon-friend"></i></p>
+        </li>
+        <a style="color: inherit;" href="promotion.html"><li class="tabs-bar-li-more">
+            <p>更多</p>
+            <p><i class="iconfont icon-menu"></i></p>
+        </li></a>
+    </div>
+    <div class="limit-bar limit-bar-show">
+        <hr class="hr1">
+        <hr class="hr2">
+        <div class="limit">
+            <p>爆料：今日已有31254位小伙伴抢购成功~</p>
+            <p class="limit-button"><a href="limit.html">进入限时专区</a></p>
+        </div>
+        <hr class="hr2">
+        <hr class="hr1">
+    </div>
+    <div class="limit-bar">
+        <hr class="hr1">
+        <hr class="hr2">
+        <div class="tc-ad">
+            <a href="coupon.html"><img src="images/gwq.png" class="img-responsive" ></a>
+        </div>
+        <hr class="hr2">
+        <hr class="hr1">
+    </div>
+
+    <div class="limit-bar">
+        <hr class="hr1">
+        <hr class="hr2">
+        <div class="limit">
+            <p>爆料：今日已有31254位小伙伴拼团成功~</p>
+            <p class="limit-button"><a href="groupon.html">进入拼团专区</a></p>
+        </div>
+        <hr class="hr2">
+        <hr class="hr1">
+    </div>
+    <!--展示上拉加载的数据列表-->
+    <div id="dataList" class="data-list goods-wrapper">
+        <!--<li>
+            <img class="pd-img" src="../res/img/pd1.jpg"/>
+            <p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>
+            <p class="pd-price">200.00 元</p>
+            <p class="pd-sold">已售50件</p>
+        </li>-->
+    </div>
+</div>
+</body>
+
+<!--在您实际的项目中,请留意mescroll-option.js的图片路径是否引用正确,可写成绝对路径或网络地址-->
+<!--可把mescroll-option.js代码拷贝到mescroll.min.js中,合为一个js文件,方便引用-->
+<script src="./js/mescroll.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
+<!--mescroll本身不依赖jq,这里为了模拟发送ajax请求,获取模拟数据-->
+<script src="./res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>

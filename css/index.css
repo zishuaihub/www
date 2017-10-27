@@ -1,0 +1,475 @@
+/*
+ * 自定义下拉刷新和上拉加载的结构
+ * 
+	//下拉刷新区域
+	<div class="mescroll-downwarp">
+		//可自定义内容
+		<p class="downwarp-tip">↓ 下拉刷新 ↓</p>
+		<img class="downwarp-progress" src="mescroll-progress.png"/>
+		<img class="downwarp-slogan" src="mescroll-slogan.png"/>
+	</div>
+
+	//上拉加载区域
+	<div class="mescroll-upwarp">
+		//加载中..
+		<img class="upwarp-progress mescroll-rotate" src="mescroll-progress.png"/>
+		<img class="upwarp-slogan" src="mescroll-slogan.png"/>
+		//无数据
+		<img class="upwarp-nodata" src="mescroll-nodata.png"/>
+	</div>
+ */
+
+/*下拉刷新--提示文本*/
+.mescroll-downwarp .downwarp-tip {
+	display: block;
+	margin-bottom: 6px;
+}
+
+/*上拉加载区域*/
+.mescroll-upwarp .upwarp-nodata {
+	width: auto;
+	height: 30px;
+	margin: auto;
+}
+
+/*下拉刷新,上拉加载--标语图片*/
+.mescroll-downwarp .downwarp-slogan,
+.mescroll-upwarp .upwarp-slogan {
+	width: auto;
+	height: 26px;
+	vertical-align: middle;
+}
+/*下拉刷新,上拉加载--旋转进度条*/
+.mescroll-downwarp .downwarp-progress,
+.mescroll-upwarp .upwarp-progress {
+	width: 36px;
+	height: 36px;
+	border: none;
+	margin: auto;
+}
+
+/*菜单*/
+
+
+/*列表*/
+.mescroll{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	height: auto;
+}
+
+/*展示上拉加载的数据列表*/
+.data-list li{
+	position: relative;
+	padding: 10px 8px 10px 120px;
+	border-bottom: 1px solid #eee;
+}
+.data-list .pd-img{
+	position: absolute;
+	left: 18px;
+	top: 18px;
+	width: 80px;
+	height: 80px;
+}
+.data-list .pd-name{
+	font-size: 16px;
+	line-height: 20px;
+	height: 40px;
+	overflow: hidden;
+}
+.data-list .pd-price{
+	margin-top: 8px;
+	color: red;
+}
+.data-list .pd-sold{
+	font-size: 12px;
+	margin-top: 8px;
+	color: gray;
+}
+
+/*页面主样式*/
+
+
+html{
+	font-family: 'PingFangSC-Medium', 'sans-serif';
+}
+.am-slider-a1{
+	box-shadow: none;
+}
+/*轮播圆点*/
+.am-slider-a1 .am-control-nav li a{
+	background: #ddd;
+	box-shadow: none;
+	background: #ddd;
+}
+.am-slider-a1 .am-control-nav li a.am-active {
+	background-color: #aaa;
+	cursor: default;
+}
+/*轮播圆点结束*/
+.container .slider .slider-menu {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: .24rem;
+	color: #333333;
+	padding: .4rem 0 .5rem 0;
+}
+/*菜单轮播圆点*/
+.container .menu-button .am-slider-a1 .am-control-nav li a {
+	width: .2rem;
+	height: .05rem;
+	display: block;
+	border-radius: 0;
+	box-shadow: none;
+	background: #ddd;
+	cursor: pointer;
+	text-indent: -9999px;
+}
+.container .menu-button .am-slider-a1 .am-control-nav li a.am-active {
+	background-color: #aaa;
+	cursor: default;
+}
+/*菜单轮播圆点结束*/
+.container .slider .slider-menu li{
+	width: 25%;
+	border-left: .3rem solid #fff;
+	border-right: .3rem solid #fff;
+	margin-top: .3rem;
+	text-align: center;
+}
+
+.container .slider .slider-menu img{
+	width: .88rem;
+	height: .88rem;
+	margin: 0 auto;
+}
+.container .slider .slider-menu .slider-title{
+	display: block;
+	margin-top: .16rem;
+	color: #333333;
+}
+.hr1{
+	padding: 0;
+	margin: 0;
+	border-top:1px solid #ececec;
+}
+.hr2{
+	padding: 0;
+	margin: 0;
+	border-top:1px solid #f9f9f9;
+}
+.trends{
+	display: flex;
+	font-size: .26rem;
+	color: #191919;
+	padding: .27rem .36rem;
+}
+.trends .trends-h{
+	flex: 1;
+	margin-right: .3rem;
+
+}
+.trends .trends-m {
+	display: flex;
+	flex-direction: column;
+	flex: 4;
+	justify-content: space-between;
+}
+.trends .trends-m .trends-m-title{
+	line-height: .36rem;
+}
+.trends .trends-m .trends-m-num{
+	font-size: .2rem;
+	color: #999999;
+}
+.trends .trends-f{
+	flex: 1
+}
+.tc1{
+	height: .2rem;
+	width: 100%;
+	background: #f5f5f5;
+}
+.tc-ad img{
+	width: 91.5%;
+	margin: .2rem auto;
+}
+.menu-bar{
+	display: flex;
+	font-size: .28rem;
+	color: #999999;
+	background: #f5f5f5;
+	padding-top: .1rem;
+	text-align: center;
+}
+
+.menu-bar i{
+	font-size: .35rem
+}
+.menu-bar li {
+	background: #fff;
+	width: 2.2rem;
+	height: 1.1rem;
+	border:1px solid #fff;
+	border-top-left-radius:1em;
+	border-top-right-radius:1em;
+}
+
+.menu-bar li.menu-bar-active{
+	background: #fe1b5e;
+	color: #fff;
+}
+.menu-bar li:last-child{
+	width: .9rem;
+
+}
+.menu-bar li p:first-child {
+	flex: 1;
+	height: .3rem;
+	line-height: .3rem;
+	margin-top: .2rem;
+	margin-bottom: .1rem;
+
+}
+.limit-bar{
+	display: none;
+}
+.limit-bar.limit-bar-show{
+	display: block;
+}
+.limit-bar .limit{
+	font-size: .24rem;
+	color:#fe1b5e;
+	padding: .1rem .36rem;
+	height: .8rem;
+	display: flex;
+	align-items: center;
+}
+.limit-bar .limit p{
+	flex: 3.25;
+	padding-right: 2%;
+	line-height: .3rem;
+}
+.limit-bar .limit .limit-button{
+	flex: 1;
+}
+
+
+.limit-bar .limit .limit-button a{
+	font-size: .22rem;
+	display: block;
+	line-height: .4rem;
+	height: .4rem;
+	width: 1.6rem;
+	color: #fff;
+	text-align: center;
+	border-radius: .25rem;
+	background: #fe1b5e;
+}
+
+.goods-wrapper-item{
+	font-size: .24rem;
+	border-bottom: .2rem solid #f5f5f5;
+}
+
+.goods-wrapper-item-title{
+	padding: 0 .36rem;
+	display: flex;
+	align-items: center;
+	height: .8rem;
+	justify-content: space-between;
+}
+.goods-wrapper-item-title-left{
+	display: flex;
+	align-items: center;
+}
+.goods-wrapper-item-title img{
+	width: .33rem;
+	height: .33rem;
+	margin-right: .25rem;
+}
+.goods-wrapper-item-title h1{
+	width: 4rem;
+}
+.goods-wrapper-item-bottom{
+	padding: 0 .36rem;
+}
+.goods-wrapper-item-bottom p{
+	margin-left: 1.9rem;
+	height: .6rem;
+	line-height: .6rem;
+	border-top:1px solid #e6e6e6;
+}
+.avatar-list{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	padding: .1rem .36rem;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100%;
+	height:2rem;
+}
+.avatar-list-img{
+	-webkit-box-flex:1;
+	-ms-flex:1;
+	flex:1;
+}
+.avatar-list-img img{
+	width: 1.7rem;
+	height: 1.7rem;
+}
+.avatar-list-img{
+	margin:8px 16px 8px 0;
+}
+.avatar-list-info{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	height: 100%;
+	min-height:1.4rem;
+	-webkit-box-flex:3;
+	-ms-flex:3;
+	flex:3;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+.avatar-list-info .avatar-list-info-title{
+	line-height: normal;
+	vertical-align: top;
+	/*	font-weight: bold;
+    */	font-size: .28rem;
+	color: #1a1a1a;
+}
+.avatar-list-info .avatar-list-info-title .gray{
+	font-size: .22rem;
+	display: block;
+	float: right;
+	/*	margin-top: 0.1%;
+    */}
+.avatar-list-info-price{
+	height: .45rem;
+	line-height: .45rem;
+	font-size: .22rem;
+}
+.avatar-list-info-top .gray{
+
+}
+.avatar-list-info-bottom{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.avatar-list-info-bottom p:first-child{
+	width: 3rem;
+}
+.goods-wrapper-item-title .distance{
+	color: #fe1b5e;
+}
+.gray{
+	color: #8b8b8b;
+}
+.avatar-list-info-bottom-price{
+	font-size: .3rem;
+	color: #fe1b5e;
+}
+.avatar-list-info-bottom .gray{
+	padding-left: 6%;
+	text-decoration: line-through;
+}
+.goods-wrapper-item-bottom .count-down span{
+	display: inline-block;
+	width: .36rem;
+	height: .36rem;
+	background: #2c2c2c;
+	color: #fff;
+	text-align: center;
+	line-height: .36rem;
+	margin: 0 .05rem;
+	font-size: .22rem;
+	border-radius: .05rem;
+}
+
+.mark{
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	border-radius: .05rem;
+	padding: 0 1%;
+	height: .32rem;
+	line-height: .32rem;
+	width:1rem;
+}
+.yellow{
+	color: #ff7200;
+	border-color: #ff7200;
+}.green{
+	 color: #09cf82;
+	 border-color: #09cf82;
+ }
+.coupon-title{
+	color: #333333 !important;
+	font-size: .26rem;
+	font-weight: bold;
+}
+.coupon-bottom{
+	flex-direction: column;
+}
+.coupon-bottom-price{
+	padding-top: .1rem;
+	display: flex;
+	justify-content: space-between;
+	color: #ff0000;
+}
+.coupon-bottom-price p:first-child{
+	padding-top: .12rem;
+}
+.coupon-bottom-price .avatar-list-info-bottom-price{
+	color: #ff0000;
+	font-size: .42rem;
+
+}
+.coupon-bottom-price .gray{
+	text-decoration: none !important;
+}
+.coupon-bottom .coupon-bottom-price .mark{
+	width: 1.5rem;
+	height: .6rem;
+	background: #fe1b5e;
+	border: none;
+	border-radius: .05rem;
+	font-size: .26rem;
+	color:#fff;
+	text-align: center;
+	line-height: .6rem;
+}
+.coupon-bottom .coupon-bottom-price .mark.checked{
+	background: #999999;
+}
+.coupon-bottom .expiry-date{
+	font-size: .22rem;
+	color: #999999;
+	margin: .1rem 0;
+	display: flex;
+	justify-content: space-between;
+}
+.coupon .coupon-title .gray{
+	font-weight: normal !important;
+}
+.coupon {
+	border-bottom: 1px solid #ececec !important;
+}
+

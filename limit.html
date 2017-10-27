@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="./css/mescroll.css">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper-3.4.2.jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/limit.css">
+    <script src="js/rem.js"></script>
+    <script src="js/limit.js"></script>
+</head>
+
+<body>
+<!--标题-->
+<div id="header">
+    <div id="top-line"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide nav-active" i="0">餐饮美食</div>
+        <div class="swiper-slide" i="1">鞋类美包</div>
+        <div class="swiper-slide" i="2">精美家纺</div>
+        <div class="swiper-slide" i="3">日用百货</div>
+        <div class="swiper-slide" i="4">超市百货</div>
+        <div class="swiper-slide" i="5">手机数码</div>
+        <!--<div class="swiper-slide" i="6">空间</div>-->
+        <!--<div class="swiper-slide" i="7">书城</div>-->
+    </div>
+</div>
+
+<!--滑动区域-->
+<div id="mescroll" class="mescroll">
+    <!--展示上拉加载的数据列表-->
+    <ul id="dataList" class="data-list">
+        <!--<li>
+            <img class="pd-img" src="../res/img/pd1.jpg"/>
+            <p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>
+            <p class="pd-price">200.00 元</p>
+            <p class="pd-sold">已售50件</p>
+        </li>-->
+    </ul>
+</div>
+</body>
+
+<script src="./js/mescroll.js" type="text/javascript" charset="utf-8"></script>
+<!--mescroll本身不依赖jq,这里为了模拟发送ajax请求,获取模拟数据-->
+<script src="./res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
+
+
+</html>

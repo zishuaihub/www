@@ -1,0 +1,28 @@
+.container{
+	background: #f5f5f5;
+}
+.container a{
+	color: inherit;
+}
+.promotion-item{
+	margin-bottom: .2rem;
+	height: 2.1rem;
+	padding: 0 .66rem 0 .36rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #f2f1ef;
+}
+.promotion-item-img img{
+	width: 1.6rem;
+}
+.promotion-item-info h3{
+	font-size: .32rem;
+	line-height: .6rem;
+	color: #333;
+}
+.promotion-item-info p{
+	font-size: .22rem;
+	line-height: .3rem;
+	color: #333;
+}
