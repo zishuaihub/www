@@ -82,7 +82,7 @@ $(function(){
                         <div class="avatar-list-info-bottom coupon-bottom">
                             <div class="coupon-bottom-price">
                                 <p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="gray">满${pd.pdmanjian}元可用</span></p>
-                                <p class="distance mark checked">已领取</p>
+                                <p class="distance mark checked">立即使用</p>
                             </div>
                             <p class="expiry-date">
                                 <span>有效期至：${pd.pdTime}</span>

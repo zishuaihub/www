@@ -184,7 +184,7 @@ $(function(){
                         <div class="avatar-list-info-bottom coupon-bottom">
                         	<div class="coupon-bottom-price">
                         		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="gray">满30元可用</span></p>
-                            <p class="distance mark checked">已领取</p>
+                            <p class="distance mark checked">立即使用</p>
                         	</div>
                         	<p class="expiry-date">
                         		<span>有效期至：2017-12-12</span>
@@ -307,12 +307,13 @@ $(function(){
     function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
-//              	$.ajax({
-//		                type: 'GET',
-//		                url: 'xxx',
-//		                url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
-//		                dataType: 'json',
-//		                success: function(data){
+             	$.ajax({
+		                type: 'GET',
+		                url: 'http://test.cc/user/v1/coupons',
+		                // url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
+		                dataType: 'json',
+		                success: function(data){
+		                    console.log(data)
             var data=pdlist1; // 模拟数据: ../res/pdlist1.js
             var listData=[];
 
@@ -346,9 +347,9 @@ $(function(){
 
             //回调
             successCallback(listData);
-//		                },
-//		                error: errorCallback
-//		            });
+		                },
+		                error: errorCallback
+		            });
         },2000)
     }
 

@@ -168,6 +168,7 @@
 	padding: 0 1%;
 	height: .32rem;
 	line-height: .32rem;
+	text-align: center;
 }
 .yellow{
 	color: #ff7200;
@@ -213,7 +214,9 @@
 	line-height: .6rem;
 }
 .coupon-bottom .coupon-bottom-price .mark.checked{
-	background: #999999;
+	border:1px solid #fe1b5e;
+	background: #fff;
+	color: #fe1b5e;
 }
 .coupon-bottom .expiry-date{
 	font-size: .22rem;
