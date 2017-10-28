@@ -138,7 +138,7 @@ $(function(){
 
     /*初始化菜单*/
     var pdType=0;//全部商品0; 奶粉1; 图书2;
-    $(".menu-bar li").click(function(){
+    $(".menu-bar-li").click(function(){
         var i=$(this).attr("i");
         if(pdType!=i) {
             //更改列表条件
