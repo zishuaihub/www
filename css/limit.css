@@ -87,6 +87,9 @@ html{
 	display: flex;
 	align-items: center;
 }
+.goods-wrapper-item-title-left h1{
+	font-weight: 400;
+}
 .goods-wrapper-item-title img{
 	width: .33rem;
 	height: .33rem;
