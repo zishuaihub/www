@@ -5,18 +5,18 @@ $(function(){
     mescrollArr[0]=initMescroll("mescroll0", "dataList0");
 
     /*初始化菜单*/
-    $(".coupon-tabs li").click(function(){
+    $(".cg-coupon-tabs li").click(function(){
         var i=Number($(this).attr("i"));
         if(curNavIndex!=i) {
             //更改列表条件
-            $(".coupon-tabs .tab-current").removeClass("tab-current");
+            $(".cg-coupon-tabs .tab-current").removeClass("tab-current");
             $(this).addClass("tab-current");
             if (i==1) {
-                $('.coupon-tabs .blk').animate({left:'48%'},'fast');
+                $('.cg-coupon-tabs .blk').animate({left:'48%'},'fast');
             } else if (i==2) {
-                $('.coupon-tabs .blk').animate({left:'82%'},'fast');
+                $('.cg-coupon-tabs .blk').animate({left:'82%'},'fast');
             } else {
-                $('.coupon-tabs .blk').animate({left:'15%'},'fast');
+                $('.cg-coupon-tabs .blk').animate({left:'15%'},'fast');
             }
             //隐藏当前列表
             $("#mescroll"+curNavIndex).hide();
@@ -77,12 +77,12 @@ $(function(){
                     <div class="avatar-list-img"><img src="${pd.pdImg}" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title coupon-title">${pd.pdName}<span class="gray">${pd.pddistance}km</span></p>
+                            <p class="avatar-list-info-title cg-coupon-title">${pd.pdName}<span class="avatar-list-info-gray">${pd.pddistance}km</span></p>
                         </div>
-                        <div class="avatar-list-info-bottom coupon-bottom">
-                            <div class="coupon-bottom-price">
-                                <p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="gray">满${pd.pdmanjian}元可用</span></p>
-                                <p class="distance mark checked">立即使用</p>
+                        <div class="avatar-list-info-bottom cg-coupon-bottom">
+                            <div class="cg-coupon-bottom-price">
+                                <p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="avatar-list-info-gray">满${pd.pdmanjian}元可用</span></p>
+                                <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark checked">立即使用</p>
                             </div>
                             <p class="expiry-date">
                                 <span>有效期至：${pd.pdTime}</span>
@@ -96,12 +96,12 @@ $(function(){
                     <div class="avatar-list-img"><img src="${pd.pdImg}" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title coupon-title">${pd.pdName}<span class="gray">${pd.pddistance}km</span></p>
+                            <p class="avatar-list-info-title cg-coupon-title">${pd.pdName}<span class="avatar-list-info-gray">${pd.pddistance}km</span></p>
                         </div>
-                        <div class="avatar-list-info-bottom coupon-bottom">
-                            <div class="coupon-bottom-price">
-                                <p><span class="avatar-list-info-bottom-price">${pd.pdPrice}</span>元购物券<span class="gray">满${pd.pdmanjian}元可用</span></p>
-                                <p class="distance mark">立即领取</p>
+                        <div class="avatar-list-info-bottom cg-coupon-bottom">
+                            <div class="cg-coupon-bottom-price">
+                                <p><span class="avatar-list-info-bottom-price">${pd.pdPrice}</span>元购物券<span class="avatar-list-info-gray">满${pd.pdmanjian}元可用</span></p>
+                                <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">立即领取</p>
                             </div>
                             <p class="expiry-date">
                                 <span>有效期至：${pd.pdTime}</span>

@@ -66,18 +66,18 @@ $(function(){
                                 <img src="images/m1.png" class="img-responsive">
                                 <h1>张小黑家的面包店</h1>
                             </div>
-                            <p class="distance">距离您1.2km</p>
+                            <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                         </div>
                         <div class="avatar-list">
                             <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                             <div class="avatar-list-info">
                                 <div class="avatar-list-info-top">
-                                    <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="gray">已团215件</span></p>
-                                    <p class="avatar-list-info-price"><span class="gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                                    <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
+                                    <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
                                 </div>
                                 <div class="avatar-list-info-bottom">
-                                    <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="gray">￥339.00</span></p>
-                                    <p class="distance mark yellow">免单团</p>
+                                    <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                                    <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark yellow">免单团</p>
                                 </div>
                             </div>
                         </div>
@@ -89,18 +89,18 @@ $(function(){
                                 <img src="images/m1.png" class="img-responsive">
                                 <h1>张小黑家的面包店</h1>
                             </div>
-                            <p class="distance">距离您1.2km</p>
+                            <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                         </div>
                         <div class="avatar-list">
                             <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                             <div class="avatar-list-info">
                                 <div class="avatar-list-info-top">
-                                    <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="gray">已团215件</span></p>
-                                    <p class="avatar-list-info-price"><span class="gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                                    <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
+                                    <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
                                 </div>
                                 <div class="avatar-list-info-bottom">
-                                    <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="gray">￥339.00</span></p>
-                                    <p class="distance mark green">特价团</p>
+                                    <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                                    <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark green">特价团</p>
                                 </div>
                             </div>
                         </div>

@@ -173,18 +173,18 @@ $(function(){
         for (var i = 0; i < data.length; i++) {
             var pd=data[i];
             if(pdType==1 && pd.pdif){
-                var str=`<div class="goods-wrapper-item coupon">
+                var str=`<div class="goods-wrapper-item cg-coupon">
 
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title coupon-title">张小黑的面包店<span class="gray">1.2km</span></p>
+                            <p class="avatar-list-info-title cg-coupon-title">张小黑的面包店<span class="avatar-list-info-gray">1.2km</span></p>
                         </div>
-                        <div class="avatar-list-info-bottom coupon-bottom">
-                        	<div class="coupon-bottom-price">
-                        		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="gray">满30元可用</span></p>
-                            <p class="distance mark checked">立即使用</p>
+                        <div class="avatar-list-info-bottom cg-coupon-bottom">
+                        	<div class="cg-coupon-bottom-price">
+                        		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="avatar-list-info-gray">满30元可用</span></p>
+                            <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark checked">立即使用</p>
                         	</div>
                         	<p class="expiry-date">
                         		<span>有效期至：2017-12-12</span>
@@ -197,18 +197,18 @@ $(function(){
                 </div>
             </div>`;
             }else if(pdType==1){
-                var str=`<div class="goods-wrapper-item coupon">
+                var str=`<div class="goods-wrapper-item cg-coupon">
 
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title coupon-title">张小黑的面包店<span class="gray">1.2km</span></p>
+                            <p class="avatar-list-info-title cg-coupon-title">张小黑的面包店<span class="avatar-list-info-gray">1.2km</span></p>
                         </div>
-                        <div class="avatar-list-info-bottom coupon-bottom">
-                        	<div class="coupon-bottom-price">
-                        		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="gray">满30元可用</span></p>
-                            <p class="distance mark">立即领取</p>
+                        <div class="avatar-list-info-bottom cg-coupon-bottom">
+                        	<div class="cg-coupon-bottom-price">
+                        		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="avatar-list-info-gray">满30元可用</span></p>
+                            <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">立即领取</p>
                         	</div>
                         	<p class="expiry-date">
                         		<span>有效期至：2017-12-12</span>
@@ -228,23 +228,23 @@ $(function(){
                         <img src="images/m1.png" class="img-responsive">
                         <h1>张小黑家的面包店</h1>
                     </div>
-                    <p class="distance">距离您1.2km</p>
+                    <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="gray">已抢215件</span></p>
-                            <p class="avatar-list-info-price"><span class="gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已抢215件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68</span><span class="gray">￥339.00</span></p>
-                            <p class="distance mark">限时购</p>
+                            <p><span class="avatar-list-info-bottom-price">￥68</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">限时购</p>
                         </div>
                     </div>
                 </div>
                 <div class="goods-wrapper-item-bottom">
-                    <p class="gray count-down">距离结束还剩 <span>05</span>:<span>13</span>:<span>06</span>:<span>30</span></p>
+                    <p class="avatar-list-info-gray count-down">距离结束还剩 <span>05</span>:<span>13</span>:<span>06</span>:<span>30</span></p>
                 </div>
             </div>
                     `;
@@ -255,18 +255,18 @@ $(function(){
                         <img src="images/m1.png" class="img-responsive">
                         <h1>张小黑家的面包店</h1>
                     </div>
-                    <p class="distance">距离您1.2km</p>
+                    <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="gray">已团215件</span></p>
-                            <p class="avatar-list-info-price"><span class="gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="gray">￥339.00</span></p>
-                            <p class="distance mark yellow">免单团</p>
+                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark yellow">免单团</p>
                         </div>
                     </div>
                 </div>
@@ -278,18 +278,18 @@ $(function(){
                         <img src="images/m1.png" class="img-responsive">
                         <h1>张小黑家的面包店</h1>
                     </div>
-                    <p class="distance">距离您1.2km</p>
+                    <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="gray">已团215件</span></p>
-                            <p class="avatar-list-info-price"><span class="gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="gray">￥339.00</span></p>
-                            <p class="distance mark green">特价团</p>
+                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark green">特价团</p>
                         </div>
                     </div>
                 </div>

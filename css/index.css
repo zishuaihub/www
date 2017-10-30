@@ -334,7 +334,7 @@ html{
     */	font-size: .28rem;
 	color: #1a1a1a;
 }
-.avatar-list-info .avatar-list-info-title .gray{
+.avatar-list-info .avatar-list-info-title .avatar-list-info-gray{
 	font-size: .22rem;
 	display: block;
 	float: right;
@@ -345,7 +345,7 @@ html{
 	line-height: .45rem;
 	font-size: .22rem;
 }
-.avatar-list-info-top .gray{
+.avatar-list-info-top .avatar-list-info-gray{
 
 }
 .avatar-list-info-bottom{
@@ -363,14 +363,14 @@ html{
 .goods-wrapper-item-title .distance{
 	color: #fe1b5e;
 }
-.gray{
+.avatar-list-info-gray{
 	color: #8b8b8b;
 }
 .avatar-list-info-bottom-price{
 	font-size: .3rem;
 	color: #fe1b5e;
 }
-.avatar-list-info-bottom .gray{
+.avatar-list-info-bottom .avatar-list-info-gray{
 	padding-left: 6%;
 	text-decoration: line-through;
 }
@@ -387,7 +387,7 @@ html{
 	border-radius: .05rem;
 }
 
-.mark{
+.goods-wrapper-item-mark{
 	color: #ff0000;
 	border: 1px solid #ff0000;
 	border-radius: .05rem;
@@ -404,32 +404,32 @@ html{
 	 color: #09cf82;
 	 border-color: #09cf82;
  }
-.coupon-title{
+.cg-coupon-title{
 	color: #333333 !important;
 	font-size: .26rem;
 	font-weight: bold;
 }
-.coupon-bottom{
+.cg-coupon-bottom{
 	flex-direction: column;
 }
-.coupon-bottom-price{
+.cg-coupon-bottom-price{
 	padding-top: .1rem;
 	display: flex;
 	justify-content: space-between;
 	color: #ff0000;
 }
-.coupon-bottom-price p:first-child{
+.cg-coupon-bottom-price p:first-child{
 	padding-top: .12rem;
 }
-.coupon-bottom-price .avatar-list-info-bottom-price{
+.cg-coupon-bottom-price .avatar-list-info-bottom-price{
 	color: #ff0000;
 	font-size: .42rem;
 
 }
-.coupon-bottom-price .gray{
+.cg-coupon-bottom-price .avatar-list-info-gray{
 	text-decoration: none !important;
 }
-.coupon-bottom .coupon-bottom-price .mark{
+.cg-coupon-bottom .cg-coupon-bottom-price .goods-wrapper-item-mark{
 	width: 1.5rem;
 	height: .6rem;
 	background: #fe1b5e;
@@ -440,22 +440,22 @@ html{
 	text-align: center;
 	line-height: .6rem;
 }
-.coupon-bottom .coupon-bottom-price .mark.checked{
+.cg-coupon-bottom .cg-coupon-bottom-price .goods-wrapper-item-mark.checked{
 	border:1px solid #fe1b5e;
 	background: #fff;
 	color: #fe1b5e;
 }
-.coupon-bottom .expiry-date{
+.cg-coupon-bottom .expiry-date{
 	font-size: .22rem;
 	color: #999999;
 	margin: .1rem 0;
 	display: flex;
 	justify-content: space-between;
 }
-.coupon .coupon-title .gray{
+.cg-coupon .cg-coupon-title .avatar-list-info-gray{
 	font-weight: normal !important;
 }
-.coupon {
+.cg-coupon {
 	border-bottom: 1px solid #ececec !important;
 }
 

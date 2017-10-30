@@ -66,7 +66,7 @@ $(function(){
                                 <img src="images/m1.png" class="img-responsive">
                                 <h1>张小黑家的面包店</h1>
                             </div>
-                            <p class="distance">距离您1.2km</p>
+                            <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                         </div>
                         <div class="avatar-list">
                             <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
@@ -77,7 +77,7 @@ $(function(){
                                 </div>
                                 <div class="avatar-list-info-bottom">
                                     <p><span class="avatar-list-info-bottom-price">￥68</span><span class="gray">￥339.00</span></p>
-                                    <p class="distance mark">限时购</p>
+                                    <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">限时购</p>
                                 </div>
                             </div>
                         </div>
