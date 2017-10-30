@@ -360,7 +360,7 @@ html{
 .avatar-list-info-bottom p:first-child{
 	width: 3rem;
 }
-.goods-wrapper-item-title .distance{
+.goods-wrapper-item-title .goods-wrapper-item-title-distance{
 	color: #fe1b5e;
 }
 .avatar-list-info-gray{
