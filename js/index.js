@@ -190,8 +190,6 @@ $(function(){
                         		<span>有效期至：2017-12-12</span>
                         		<span>195493人已领</span>
                         	</p>
-
-
                         </div>
                     </div>
                 </div>

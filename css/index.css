@@ -1,17 +1,14 @@
-
 /*下拉刷新--提示文本*/
 .mescroll-downwarp .downwarp-tip {
 	display: block;
 	margin-bottom: 6px;
 }
-
 /*上拉加载区域*/
 .mescroll-upwarp .upwarp-nodata {
 	width: auto;
 	height: 30px;
 	margin: auto;
 }
-
 /*下拉刷新,上拉加载--标语图片*/
 .mescroll-downwarp .downwarp-slogan,
 .mescroll-upwarp .upwarp-slogan {
@@ -27,10 +24,6 @@
 	border: none;
 	margin: auto;
 }
-
-/*菜单*/
-
-
 /*列表*/
 .mescroll{
 	position: fixed;
@@ -38,7 +31,6 @@
 	bottom: 0;
 	height: auto;
 }
-
 /*展示上拉加载的数据列表*/
 .data-list li{
 	position: relative;
@@ -67,10 +59,7 @@
 	margin-top: 8px;
 	color: gray;
 }
-
 /*页面主样式*/
-
-
 html{
 	font-family: 'PingFangSC-Medium', 'sans-serif';
 }
@@ -118,7 +107,6 @@ html{
 	margin-top: .3rem;
 	text-align: center;
 }
-
 .container .slider .slider-menu img{
 	width: .88rem;
 	height: .88rem;
@@ -183,7 +171,6 @@ html{
 	padding-top: .1rem;
 	text-align: center;
 }
-
 .menu-bar i{
 	font-size: .35rem
 }
@@ -234,8 +221,6 @@ html{
 .limit-bar .limit .limit-button{
 	flex: 1;
 }
-
-
 .limit-bar .limit .limit-button a{
 	font-size: .22rem;
 	display: block;
@@ -252,7 +237,6 @@ html{
 	font-size: .24rem;
 	border-bottom: .2rem solid #f5f5f5;
 }
-
 .goods-wrapper-item-title{
 	padding: 0 .36rem;
 	display: flex;
