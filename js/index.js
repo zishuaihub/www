@@ -152,6 +152,7 @@ $(function(){
     })
 
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
+
     function getListData(page){
         //联网加载数据
         console.log("pdType="+pdType+", page.num="+page.num);
