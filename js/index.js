@@ -306,14 +306,14 @@ $(function(){
     function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
-             	// $.ajax({
-		          //       type: 'GET',
-		          //       url: 'http://test.cc/user/v1/coupons',
-		                // url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
-		                // dataType: 'json',
-		                // success: function(data){
-		                //     console.log(data)
-            var data=pdlist1; // 模拟数据: ../res/pdlist1.js
+             	$.ajax({
+		                type: 'GET',
+		                url: 'http://test.cc/user/v1/coupons',
+		                url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
+		                dataType: 'json',
+		                success: function(data){
+		                    console.log(data)
+            // var data=pdlist1; // 模拟数据: ../res/pdlist1.js
             var listData=[];
 
             //pdType 全部商品0; 奶粉1; 图书2;
@@ -346,9 +346,9 @@ $(function(){
 
             //回调
             successCallback(listData);
-		            //     },
-		            //     error: errorCallback
-		            // });
+		                },
+		                error: errorCallback
+		            });
         },500)
     }
 
