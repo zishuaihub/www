@@ -401,7 +401,7 @@ $(function(){
                 //奶粉
 
                 for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
-                    if(i==data.length) break;
+                    if(false) break;
                     listData.push(data[i]);
                 }
 
