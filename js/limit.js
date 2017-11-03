@@ -1,4 +1,4 @@
-$(function(){
+$( function(){
     //滑动导航
     var mySwiper1 = new Swiper('#header',{
         freeMode : true,
@@ -24,7 +24,8 @@ $(function(){
     });
 
     /*初始化菜单*/
-    var pdType=0;//全部商品0; 奶粉1; 面膜2; 图书3;
+    //全部商品0; 奶粉1; 面膜2; 图书3;
+    var pdType=15;
     $(".swiper-wrapper .swiper-slide").click(function(){
         var i=$(this).attr("i");
         if(pdType!=i) {
@@ -56,7 +57,7 @@ $(function(){
     /*设置列表数据*/
     function setListData(data){
         var listDom=document.getElementById("dataList");
-        for (var i = 0; i < data.length; i++) {
+        for (     i = 0; i < data.length; i++) {
             var pd=data[i];
 
             var str=`
@@ -94,15 +95,15 @@ $(function(){
     function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
-//              	$.ajax({
-//		                type: 'GET',
-//		                url: 'xxx',
-//		                url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
-//		                dataType: 'json',
-//		                success: function(data){
-            var data=pdlist1; // 模拟数据: ../res/pdlist1.js
+             	$.ajax({
+		                type: 'GET',
+		                // url: 'xxx',
+		                url: 'http://test.cc/user/v1/products/free?categoryId='+pdType,
+		                dataType: 'json',
+		                success: function(data){
+            // var data=pdlist1; // 模拟数据: ../res/pdlist1.js
             var listData=[];
-
+            console.log(data)
             //pdType 全部商品0; 奶粉1; 面膜2; 图书3;
             if(pdType==0){
                 //全部商品 (模拟分页数据)
@@ -138,9 +139,9 @@ $(function(){
 
             //回调
             successCallback(listData);
-//		                },
-//		                error: errorCallback
-//		            });
+		                },
+		                error: errorCallback
+		            });
         },1000)
     }
 

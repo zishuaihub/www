@@ -53,17 +53,17 @@ function getListData(page){
 
 function initMeScroll(mescrollId, options) {
     //下拉刷新的布局内容
-    var htmlContent = '<p class="downwarp-tip">↓ 下拉刷新 ↓</p>';
+    let htmlContent = '<p class="downwarp-tip">↓ 下拉刷新 ↓</p>';
     htmlContent += '<img class="downwarp-progress" src="option/mescroll-progress.png"/>';
     htmlContent += '<img class="downwarp-slogan" src="option/mescroll-slogan.png"/>';
 
     //上拉加载中的布局
-    var htmlLoading = '<img class="upwarp-progress mescroll-rotate" src="option/mescroll-progress.png"/><img class="upwarp-slogan" src="option/mescroll-slogan.png"/>';
+    let htmlLoading = '<img class="upwarp-progress mescroll-rotate" src="option/mescroll-progress.png"/><img class="upwarp-slogan" src="option/mescroll-slogan.png"/>';
     //无数据的布局
-    var htmlNodata = '<img class="upwarp-nodata" src="option/mescroll-nodata.png"/>';
+    let htmlNodata = '<img class="upwarp-nodata" src="option/mescroll-nodata.png"/>';
 
     //自定义的配置 (以下注释部分等同于mescroll本身的默认配置,这里贴出来是为了便于理解,实际项目可直接删除)
-    var myOption={
+    let myOption={
         down:{
             htmlContent: htmlContent, //布局内容
 //			inited: function(mescroll, downwarp) {
@@ -115,7 +115,7 @@ function initMeScroll(mescrollId, options) {
                 src: "option/mescroll-totop.png" //回到顶部按钮的图片路径
             }
         }
-    }
+    };
 
     //加入自定义的默认配置
     options=MeScroll.extend(options,myOption);
@@ -128,7 +128,7 @@ function initMeScroll(mescrollId, options) {
 
 $(function(){
     //创建MeScroll对象
-    var mescroll = initMeScroll("mescroll", {
+    let mescroll = initMeScroll("mescroll", {
         up: {
             clearEmptyId:"dataList",
             isBoth: true, //上拉加载时,如果滑动到列表顶部是否可以同时触发下拉刷新;默认false,两者不可同时触发; 这里为了演示改为true,不必等列表加载完毕才可下拉;
@@ -137,10 +137,11 @@ $(function(){
     });
 
     /*初始化菜单*/
-    var pdType=0;//全部商品0; 奶粉1; 图书2;
+    let pdType=0;//全部商品0; 奶粉1; 图书2;
     $(".menu-bar-li").click(function(){
-        var i=$(this).attr("i");
-        if(pdType!=i) {
+        let i=$(this).attr("i");
+        i= parseInt(i);
+        if(pdType !== i) {
             //更改列表条件
             pdType=i;
             $(".menu-bar .menu-bar-active").removeClass("menu-bar-active");
@@ -149,7 +150,7 @@ $(function(){
             //重置列表数据
             mescroll.resetUpScroll();
         }
-    })
+    });
 
     /*联网加载列表数据  page = {num:1, size:10}; num:当前页 从1开始, size:每页数据条数 */
 
@@ -167,15 +168,17 @@ $(function(){
             mescroll.endErr();
         });
     }
-
+    var j=0;
     /*设置列表数据*/
     function setListData(data){
-        var listDom=document.getElementById("dataList");
-        for (var i = 0; i < data.length; i++) {
-            var pd=data[i];
+
+        let listDom=document.getElementById("dataList");
+        for (let i = 0; i < data.length; i++) {
+            let pd=data[i];
+            j=j+1;
+               //优惠券可用
             if(pdType==1 && pd.pdif){
                 var str=`<div class="goods-wrapper-item cg-coupon">
-
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
@@ -196,22 +199,23 @@ $(function(){
                 </div>
             </div>`;
             }else if(pdType==1){
+                //立即领取优惠券
                 var str=`<div class="goods-wrapper-item cg-coupon">
-
+             
                 <div class="avatar-list">
                     <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title cg-coupon-title">张小黑的面包店<span class="avatar-list-info-gray">1.2km</span></p>
+                            <p class="avatar-list-info-title cg-coupon-title">${pd.storeName}<span class="avatar-list-info-gray">1.2km</span></p>
                         </div>
                         <div class="avatar-list-info-bottom cg-coupon-bottom">
                         	<div class="cg-coupon-bottom-price">
-                        		<p><span class="avatar-list-info-bottom-price">68</span>元购物券<span class="avatar-list-info-gray">满30元可用</span></p>
+                        		<p><span class="avatar-list-info-bottom-price">${pd.parValue}</span>元购物券<span class="avatar-list-info-gray">满${pd.attainAmount}元可用</span></p>
                             <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">立即领取</p>
                         	</div>
                         	<p class="expiry-date">
-                        		<span>有效期至：2017-12-12</span>
-                        		<span>195493人已领</span>
+                        		<span>有效期至：${pd.effectiveEndAt}</span>
+                        		<span>${pd.getNumber}人已领</span>
                         	</p>
 
 
@@ -220,74 +224,76 @@ $(function(){
                 </div>
             </div>`;
             }else if(pdType==0){
+                //限时购
+
                 var str=`
                     <div class="goods-wrapper-item">
                 <div class="goods-wrapper-item-title">
                     <div class="goods-wrapper-item-title-left">
                         <img src="images/m1.png" class="img-responsive">
-                        <h1>张小黑家的面包店</h1>
+                        <h1>${pd.storeName}</h1>
                     </div>
                     <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
-                    <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
+                    <div class="avatar-list-img"><img src=${pd.image} alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已抢215件</span></p>
-                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">${pd.name}<span class="avatar-list-info-gray">已抢${pd.saleNumber}件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">${pd.slogan}</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p><span class="avatar-list-info-bottom-price">￥${pd.price}</span><span class="avatar-list-info-gray">￥${pd.originalPrice}</span></p>
                             <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark">限时购</p>
                         </div>
                     </div>
                 </div>
                 <div class="goods-wrapper-item-bottom">
-                    <p class="avatar-list-info-gray count-down">距离结束还剩 <span>05</span>:<span>13</span>:<span>06</span>:<span>30</span></p>
+                    <p class="avatar-list-info-gray count-down" id="countDown${j}"></p>
                 </div>
             </div>
                     `;
-            }else if(pdType==2 && pd.pdid==1){
+            }else if(pdType==2 && pd.isGiving=='免单团'){
                 var str=`<div class="goods-wrapper-item">
                 <div class="goods-wrapper-item-title">
                     <div class="goods-wrapper-item-title-left">
                         <img src="images/m1.png" class="img-responsive">
-                        <h1>张小黑家的面包店</h1>
+                        <h1>${pd.storeName}</h1>
                     </div>
                     <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
-                    <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
+                    <div class="avatar-list-img"><img src=${pd.image} alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
-                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">${pd.name}<span class="avatar-list-info-gray">已团${pd.saleNumber}件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">${pd.slogan}</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p><span class="avatar-list-info-bottom-price">￥${pd.price}</span><span class="avatar-list-info-gray">￥${pd.originalPrice}</span></p>
                             <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark yellow">免单团</p>
                         </div>
                     </div>
                 </div>
             </div>`;
-            }else if(pdType==2){
+            }else if(pdType==2 && pd.isGiving=='特价团'){
                 var str=`<div class="goods-wrapper-item">
                 <div class="goods-wrapper-item-title">
                     <div class="goods-wrapper-item-title-left">
                         <img src="images/m1.png" class="img-responsive">
-                        <h1>张小黑家的面包店</h1>
+                        <h1>${pd.storeName}</h1>
                     </div>
                     <p class="goods-wrapper-item-title-distance">距离您1.2km</p>
                 </div>
                 <div class="avatar-list">
-                    <div class="avatar-list-img"><img src="images/li1.png" alt="" class="img-responsive"></div>
+                    <div class="avatar-list-img"><img src=${pd.image} alt="" class="img-responsive"></div>
                     <div class="avatar-list-info">
                         <div class="avatar-list-info-top">
-                            <p class="avatar-list-info-title">下午茶时光（万达广场）<span class="avatar-list-info-gray">已团215件</span></p>
-                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">仅售68元，价值339元下午茶套餐一份！</span></p>
+                            <p class="avatar-list-info-title">${pd.name}<span class="avatar-list-info-gray">已团${pd.saleNumber}件</span></p>
+                            <p class="avatar-list-info-price"><span class="avatar-list-info-gray">${pd.slogan}</span></p>
                         </div>
                         <div class="avatar-list-info-bottom">
-                            <p><span class="avatar-list-info-bottom-price">￥68.00</span><span class="avatar-list-info-gray">￥339.00</span></p>
+                            <p><span class="avatar-list-info-bottom-price">￥${pd.price}</span><span class="avatar-list-info-gray">￥${pd.originalPrice}</span></p>
                             <p class="goods-wrapper-item-title-distance goods-wrapper-item-mark green">特价团</p>
                         </div>
                     </div>
@@ -297,8 +303,61 @@ $(function(){
 
 
             var liDom=document.createElement("div");
+
+
             liDom.innerHTML=str;
+
             listDom.appendChild(liDom);
+            //活动倒计时
+            if(pdType===0 ){
+                var timer= function (json){
+                        if(json.currentTime){
+                            var now=new Date();
+                            var year=now.getFullYear();//返回年份（4位数字）
+                            var month=now.getMonth()+1;//返回月份（0-11，所以+1）
+                            var day=now.getDate();//返回某天（1-31）
+                            var h=now.getHours();//返回小时（0-23）
+                            var m=now.getMinutes();//返回分钟（0-59）
+                            var s=now.getSeconds();//返回秒数（0-59）
+
+
+                            var weekday=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+                            // document.getElementById(json.objId).innerHTML=year+'年'+month+'月'+day+'日'+weekday[now.getDay()]+' '+h+':'+m+':'+s;
+                            setTimeout(function(){timer(json)},100);
+                        }else{
+                            var endtime=new Date(json.endtime);//结束时间
+                            var nowtime = new Date();//当前时间
+                            var lefttime=parseInt((endtime.getTime()-nowtime.getTime())/1000); //计算差的秒数
+                            //一天24小时 一小时60分钟 一分钟60秒
+                            d=parseInt(lefttime/3600/24);
+                            h=parseInt((lefttime/3600)%24);
+                            m=parseInt((lefttime/60)%60);
+                            s=parseInt(lefttime%60);
+                            //补O
+                            h=h<10?'0'+h:h;
+                            m=m<10?'0'+m:m;
+                            s=s<10?'0'+s:s;
+                            document.getElementById(json.objId).innerHTML=`距离结束还剩 <span>${d}</span>:<span>${h}</span>:<span>${m}</span>:<span>${s}</span>`;
+                            if(lefttime>0){setTimeout(function(){timer(json)},500);}
+                        }
+                    }
+
+
+                timer({
+                    currentTime:true,
+                    objId:'thisTime'
+                })
+
+                timer({
+                    objId:'countDown'+j,
+                    endtime:pd.endedAt
+                })
+
+            }else {
+
+            }
+
+
         }
     }
 
@@ -306,16 +365,31 @@ $(function(){
     function getListDataFromNet(pdType,pageNum,pageSize,successCallback,errorCallback) {
         //延时一秒,模拟联网
         setTimeout(function () {
+            let URL= '';
+            switch(pdType)
+            {
+                case 0 :
+                    //限时抢购
+                    URL='http://test.cc/user/v1/products/time';
+                    break;
+                case 1 :
+                    //优惠券
+                    URL='http://test.cc/user/v1/coupons';
+                    break;
+                case 2 :
+                    URL='http://test.cc/user/v1/products/free';
+                //拼团抢购
+            }
+
              	$.ajax({
 		                type: 'GET',
-		                url: 'http://test.cc/user/v1/coupons',
-		                url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
+		                url: URL,
+		                // url: 'xxx?pdType='+pdType+'&num='+pageNum+'&size='+pageSize,
 		                dataType: 'json',
 		                success: function(data){
-		                    console.log(data)
+		                    console.log(data);
             // var data=pdlist1; // 模拟数据: ../res/pdlist1.js
             var listData=[];
-
             //pdType 全部商品0; 奶粉1; 图书2;
             if(pdType==0){
                 //全部商品 (模拟分页数据)
@@ -323,14 +397,9 @@ $(function(){
                     if(i==data.length) break;
                     listData.push(data[i]);
                 }
-
             }else if(pdType==1){
                 //奶粉
-                // for (var i = 0; i < data.length; i++) {
-                //     if (data[i].pdName.indexOf("奶")!=-1) {
-                //         listData.push(data[i]);
-                //     }
-                // }
+
                 for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
                     if(i==data.length) break;
                     listData.push(data[i]);

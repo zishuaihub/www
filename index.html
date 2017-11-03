@@ -17,7 +17,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/amazeui.min.js"></script>
     <script type="text/javascript" src="js/rem.js"></script>
-
+    <script src="js/jquery.countdown.min.js"></script>
 </head>
 
 <body>
@@ -120,7 +120,7 @@
         <hr class="hr1">
         <hr class="hr2">
         <div class="limit">
-            <p>爆料：今日已有31254位小伙伴抢购成功~</p>
+            <p >爆料：今日已有31254位小伙伴抢购成功~</p>
             <p class="limit-button"><a href="limit.html">进入限时专区</a></p>
         </div>
         <hr class="hr2">
@@ -165,7 +165,7 @@
 <!--mescroll本身不依赖jq,这里为了模拟发送ajax请求,获取模拟数据-->
 <script src="./res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
 <script>
-    var nums = null;
+    var nums = 10;
     if (nums && nums > 8 ) {
         $('.menu-button .am-slider').flexslider(
 
