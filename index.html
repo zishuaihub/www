@@ -9,8 +9,6 @@
 
     <link rel="stylesheet" href="css/amazeui.min.css">
     <link rel="stylesheet" href="css/mescroll.css">
-    <!--在您实际的项目中,请留意mescroll-option.css的图片路径是否引用正确,可写成绝对路径或网络地址-->
-    <!--可把mescroll-option.css代码拷贝到mescroll.min.css中,合为一个css文件,方便引用-->
     <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
@@ -18,11 +16,13 @@
     <script src="js/amazeui.min.js"></script>
     <script type="text/javascript" src="js/rem.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
+    <script src="./js/mescroll.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vue.js"></script>
 </head>
 
 <body>
 <!--滑动区域-->
-<div id="mescroll" class="mescroll">
+<div id="mescroll" class="mescroll" style="margin-bottom: 70px">
     <div class="container">
         <!--模拟的轮播-->
         <div data-am-widget="slider" class="am-slider am-slider-a1 main-slider"
@@ -95,76 +95,96 @@
         <div class="tc1"></div>
     </div>
     <!--筛选条件; 模拟列表的重置和演示空布局的使用-->
-    <div class="menu-bar">
-        <li class="menu-bar-li" i="1">
-            <p>优惠券</p>
-            <p><i class="iconfont icon-coupons
-"></i></p>
-        </li>
-        <li class="menu-bar-li menu-bar-active" i="0">
-            <p>限时特卖</p>
-            <p><i class="iconfont icon-time"></i></p>
-        </li>
-        <li class="menu-bar-li" i="2">
-            <p>拼团抢购</p>
-            <p><i class="iconfont icon-friend"></i></p>
-        </li>
-        <a style="color: inherit;" href="promotion.html">
-            <li>
-                <p>更多</p>
-                <p><i class="iconfont icon-menu"></i></p>
+    <div style="">
+        <div class="menu-bar">
+            <li class="menu-bar-li menu-bar-active" i="0">
+                <p>优惠券</p>
+
+                <p><i class="iconfont icon-coupons
+    "></i></p>
             </li>
-        </a>
-    </div>
-    <div class="limit-bar limit-bar-show">
-        <hr class="hr1">
-        <hr class="hr2">
-        <div class="limit">
-            <p >爆料：今日已有31254位小伙伴抢购成功~</p>
-            <p class="limit-button"><a href="limit.html">进入限时专区</a></p>
+            <li class="menu-bar-li " i="1">
+                <p>限时特卖</p>
+                <p><i class="iconfont icon-time"></i></p>
+            </li>
+            <li class="menu-bar-li" i="2">
+                <p>拼团抢购</p>
+                <p><i class="iconfont icon-friend"></i></p>
+            </li>
+            <a style="color: inherit;" href="promotion.html">
+                <li>
+                    <p>更多</p>
+                    <p><i class="iconfont icon-menu"></i></p>
+                </li>
+            </a>
         </div>
-        <hr class="hr2">
-        <hr class="hr1">
-    </div>
-    <div class="limit-bar">
-        <hr class="hr1">
-        <hr class="hr2">
-        <div class="tc-ad">
-            <a href="coupon.html"><img src="images/gwq.png" class="img-responsive"></a>
+        <div class="limit-bar limit-bar-show">
+            <hr class="hr1">
+            <hr class="hr2">
+            <div class="limit">
+                <p >爆料：今日已有31254位小伙伴抢购成功~</p>
+                <p class="limit-button"><a href="limit.html">进入限时专区</a></p>
+            </div>
+            <hr class="hr2">
+            <hr class="hr1">
         </div>
-        <hr class="hr2">
-        <hr class="hr1">
+        <div class="limit-bar">
+            <hr class="hr1">
+            <hr class="hr2">
+            <div class="tc-ad">
+                <a href="coupon.html"><img src="images/gwq.png" class="img-responsive"></a>
+            </div>
+            <hr class="hr2">
+            <hr class="hr1">
+        </div>
+
+        <div class="limit-bar">
+            <hr class="hr1">
+            <hr class="hr2">
+            <div class="limit">
+                <p>爆料：今日已有31254位小伙伴拼团成功~</p>
+                <p class="limit-button"><a href="groupon.html">进入拼团专区</a></p>
+            </div>
+            <hr class="hr2">
+            <hr class="hr1">
+        </div>
+        <!--展示上拉加载的数据列表-->
+        <div id="dataList" class="data-list goods-wrapper">
+            <div v-for="item in listData">
+                <div class="goods-wrapper-item cg-coupon">
+                    <div class="avatar-list">
+                        <div class="avatar-list-img"><img :src=item.storeImage alt="" class="img-responsive"></div>
+                        <div class="avatar-list-info">
+                            <div class="avatar-list-info-top">
+                                <p class="avatar-list-info-title cg-coupon-title">{{item.storeName}}<span class="avatar-list-info-gray">{{item.distance}}km</span></p>
+                            </div>
+                            <div class="avatar-list-info-bottom cg-coupon-bottom">
+                                <div class="cg-coupon-bottom-price">
+                                    <p><span class="avatar-list-info-bottom-price">{{item.parValue}}</span>元优惠券<span class="avatar-list-info-gray">满{{item.attainAmount}}元可用</span></p>
+                                    <p class="coupon-click goods-wrapper-item-title-distance goods-wrapper-item-mark">立即领取</p>
+                                </div>
+                                <p class="expiry-date">
+                                    <span>有效期至：{{item.effectiveEndAt}}</span>
+                                    <span>{{item.getNumber}}人已领</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="limit-bar">
-        <hr class="hr1">
-        <hr class="hr2">
-        <div class="limit">
-            <p>爆料：今日已有31254位小伙伴拼团成功~</p>
-            <p class="limit-button"><a href="groupon.html">进入拼团专区</a></p>
-        </div>
-        <hr class="hr2">
-        <hr class="hr1">
-    </div>
-    <!--展示上拉加载的数据列表-->
-    <div id="dataList" class="data-list goods-wrapper">
-        <!--<li>
-            <img class="pd-img" src="../res/img/pd1.jpg"/>
-            <p class="pd-name">商品标题商品标题商品标题商品标题商品标题商品</p>
-            <p class="pd-price">200.00 元</p>
-            <p class="pd-sold">已售50件</p>
-        </li>-->
-    </div>
+
 
 </div>
 </body>
 
 <!--在您实际的项目中,请留意mescroll-option.js的图片路径是否引用正确,可写成绝对路径或网络地址-->
 <!--可把mescroll-option.js代码拷贝到mescroll.min.js中,合为一个js文件,方便引用-->
-<script src="./js/mescroll.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/index.js" type="text/javascript" charset="utf-8"></script>
 <!--mescroll本身不依赖jq,这里为了模拟发送ajax请求,获取模拟数据-->
-<script src="./res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var nums = 10;
     if (nums && nums > 8 ) {
